@@ -34,15 +34,15 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 
 require('./app/routes.js')(app,passport);
 
-app.get('/auth/facebook',
-  passport.authenticate('facebook'));
+// app.get('/auth/facebook',
+//   passport.authenticate('facebook'));
 
-app.get('/auth/facebook/callback',
-  passport.authenticate('facebook', { failureRedirect: '/login' }),
-  function(req, res) {
-    // Successful authentication, redirect home.
-    res.redirect('/');
-  });
+// app.get('/auth/facebook/callback',
+//   passport.authenticate('facebook', { failureRedirect: '/login' }),
+//   function(req, res) {
+//     // Successful authentication, redirect home.
+//     res.redirect('/');
+//   });
 
 app.listen(port);
 console.log('The magic happen on port', + port);
